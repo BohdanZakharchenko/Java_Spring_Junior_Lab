@@ -1,0 +1,53 @@
+Перевірить, чи працює Tomcat. Якщо Tomcat не запущений, то запустить його.
+Розгорне додаток.
+
+mvn clean verify
+
+
+Створення WAR-файлу
+mvn clean package
+
+Деплой додатку
+mvn cargo:deploy
+
+оновити вже встановлений додаток:
+mvn cargo:redeploy
+
+
+
+/opt/tomcat/bin/shutdown.sh
+/opt/tomcat/bin/startup.sh
+
+Перевірити чи працює аплікація (має бути запущений Tomcat)
+http://localhost:8080/fruits/hello
+
+перевстановити залежності:
+mvn clean install -U
+
+
+sudo nano /opt/tomcat/conf/tomcat-users.xml
+
+<tomcat-users>
+    <user username="admin" password="admin" roles="manager-gui,manager-script"/>
+</tomcat-users>
+
+
+sudo nano /opt/tomcat/webapps/manager/META-INF/context.xml
+Знайдіть:
+
+<Context>
+    <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+           allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1"/>
+</Context>
+Замініть на:
+
+<Context>
+    <!-- Вимкнення обмежень доступу -->
+</Context>
+
+
+
+<groupId>uaedunung.se</groupId>
+<artifactId>fruits</artifactId>
+<version>1.0-SNAPSHOT</version>
+<packaging>war</packaging>

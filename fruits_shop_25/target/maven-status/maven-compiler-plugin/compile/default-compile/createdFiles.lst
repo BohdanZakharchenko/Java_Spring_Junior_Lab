@@ -1,0 +1,7 @@
+uaedunung\se\config\DBConnection.class
+uaedunung\se\config\HibernateUtil.class
+uaedunung\se\dao\UserDAO.class
+uaedunung\se\models\User.class
+uaedunung\se\config\FreeMarkerConfig.class
+uaedunung\se\servlets\HelloServlet.class
+uaedunung\se\servlets\UserServlet.class
