@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <title>Реєстрація користувача</title>
 </head>
 <body>
-<h2>Форма створення користувача</h2>
+<h2>Форма для виконання транзакції</h2>
 <form method="post" action="user">
+    <h3>Додавання нового користувача</h3>
     <input type="text" name="name" placeholder="Ім’я" required><br>
     <input type="email" name="email" placeholder="Email" required><br>
     <input type="password" name="password" placeholder="Пароль" required><br>
     <input type="text" name="role" placeholder="Роль (client, employee, supplier, admin)" required><br>
     <input type="text" name="phone" placeholder="Телефон" required><br>
-    <button type="submit">Додати користувача</button>
+
+    <h3>Отримання користувача за ID</h3>
+    <input type="number" name="idGet" placeholder="ID користувача" required><br>
+
+    <h3>Видалення користувача за ID</h3>
+    <input type="number" name="idDel" placeholder="ID користувача" required><br><br>
+
+    <button type="submit">Виконати транзакцію</button>
 </form>
 </body>
 </html>
