@@ -1,0 +1,8 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+logging:
+  level: INFO
+  loggers:
+    io.dropwizard: DEBUG
